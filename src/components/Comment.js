@@ -1,8 +1,13 @@
 import React, { PropTypes } from 'react'
 
 function Comment(props) {
-    if (!props.comment) return null
-    const { comment: { user, text } } = props
+
+    if (!props.comment) {
+        return null;
+    }
+
+    const { comment: { user, text } } = props;
+
     return (
         <p>
             {text}
@@ -13,9 +18,10 @@ function Comment(props) {
 
 Comment.propTypes = {
     comment: PropTypes.shape({
+        id: PropTypes.number,
         user: PropTypes.string,
         text: PropTypes.string.isRequired
     })
-}
+};
 
-export default Comment
+export default Comment;
