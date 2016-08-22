@@ -6,7 +6,7 @@ export default class ArticleList extends Component {
     static propTypes = {
         articles: React.PropTypes.arrayOf(React.PropTypes.object).isRequired
     };
-
+    //стейта у тебя теперь вообще не должно быть - оно должно жить в декораторе
     state = {
         openArticleId: null,
         isDoubleClick: false
