@@ -28,7 +28,7 @@ class Container extends Component {
 
         return (
             <div>
-                <DayPickerComponent date = {date} />
+                <DayPickerComponent />
                 <Select
                     options = {options}
                     value = {this.state.selected}
@@ -47,7 +47,7 @@ class Container extends Component {
     getJQ = (ref) => {
         this.jqRef = ref;
 
-        console.log('---', findDOMNode(ref))
+        //console.log('---', findDOMNode(ref))
     };
 
     handleChange = (selected) => {

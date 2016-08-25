@@ -4,21 +4,13 @@ import DayPicker, {DateUtils} from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
 class MyDayPicker extends Component {
-    static PropTypes = {
-
-    };
-
     state = {
         from: null,
         to: null
     };
 
     handleDayClick = (event, day) => {
-        console.log('handleDayClick');
-
         const range = DateUtils.addDayToRange(day, this.state);
-
-        console.log(range);
 
         this.setState(range);
     };
