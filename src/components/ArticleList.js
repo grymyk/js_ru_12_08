@@ -8,9 +8,9 @@ class ArticleList extends Component {
         //from accordion decorator
         toggleOpenItem: PropTypes.func.isRequired,
         isOpenItem: PropTypes.func.isRequired
-    }
+    };
 
-    componentWillMount() {
+    /*componentWillMount() {
         console.log('---', 'mounting')
     }
 
@@ -20,30 +20,25 @@ class ArticleList extends Component {
 
     componentWillReceiveProps(nextProps) {
         console.log('---', this.props, nextProps)
-    }
+    }*/
 
     render() {
-        const { articles, toggleOpenItem, isOpenItem } = this.props
+        const { articles, toggleOpenItem, isOpenItem } = this.props;
+
         const articleItems = articles.map(articleObject =>
             <li key = {articleObject.id}>
                 <Article article = {articleObject}
                     isOpen = {isOpenItem(articleObject.id)}
                     toggleOpen = {toggleOpenItem(articleObject.id)}
                 />
-            </li>)
+            </li>);
+
         return (
             <ul>
                 {articleItems}
             </ul>
         )
     }
-
-    toggleOpenArticle = id => ev => {
-        if (ev) ev.preventDefault()
-        this.setState({
-            openArticleId: id
-        })
-    }
 }
 
-export default accordion(ArticleList)
+export default accordion(ArticleList);

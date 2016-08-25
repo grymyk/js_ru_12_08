@@ -8,7 +8,7 @@ class CommentList extends Component {
         comments: PropTypes.array,
         isOpen: PropTypes.bool,
         toggleOpen: PropTypes.func
-    }
+    };
 
 /*
     componentDidMount() {
