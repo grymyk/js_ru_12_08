@@ -7,24 +7,23 @@ export default (Component) => {
             isDoubleClick: false
         };
 
-        toggleArticle = ev => {
-            console.log('Decor toggleOpenArticle');
-            console.log('Decor isDoubleClick: ', isDoubleClick);
+        toggleOpenArticle = (id , isDoubleClick) => ev => {
+            console.log('Decor toggleOpen');
 
             if (ev) {
                 ev.preventDefault();
             }
 
             this.setState({
-                openArticleId: id,
+                openArticleId: this.state.id,
                 isDoubleClick: !this.state.isDoubleClick
-            });
-        }
+            })
+        };
 
         render() {
             return <Component {... this.props}
                 isOpen = {this.state.isOpen}
-                toggleOpen = {this.toggleOpen}
+                toggleOpen = {this.toggleOpenArticle}
                 isDoubleClick = {this.state.isDoubleClick}
             />
         }
