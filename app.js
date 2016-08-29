@@ -2,9 +2,9 @@ import React from 'react'
 import { render } from 'react-dom'
 import { articles } from './fixtures'
 
-import ContainerList from './components/ContainerList'
+import Container from './components/Container'
 
 render(
-    <ContainerList />,
+    <Container articles = {articles} />,
     document.getElementById('container')
 );

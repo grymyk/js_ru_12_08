@@ -10,31 +10,22 @@ class CommentList extends Component {
         toggleOpen: PropTypes.func
     };
 
-/*
-    componentDidMount() {
-        console.log('---', 'mounted')
-    }
-
-    componentWillUnmount() {
-        console.log('---', 'unmounting')
-    }
-
-    componentWillReceiveProps() {
-        console.log('---', 'updating')
-    }
-*/
-
     render() {
         const { comments, isOpen, toggleOpen } = this.props;
 
-        if (!comments || !comments.length) return <p>No comments yet</p>
-        const toggleButton = <a href="#" onClick = {toggleOpen}>{isOpen ? 'hide' : 'show'} comments.
-            <CommentCount count = {comments.length}/>
-        </a>
+        if (!comments || !comments.length) {
+            return <p>No comments yet</p>
+        }
 
-        if (!isOpen) return <div>{toggleButton}</div>
+        const toggleButton = <a href="#" onClick = {toggleOpen}>{isOpen ? 'hide' : 'show'} comments.</a>
 
-        const commentItems = comments.map(comment => <li key = {comment.id}><Comment comment = {comment} /></li>)
+        if (!isOpen) {
+            return <div>{toggleButton}</div>;
+        }
+
+        const commentItems = comments.map(comment => {
+            return <li key = {comment.id}><Comment comment = {comment} /></li>;
+        });
 
         return (
             <div>

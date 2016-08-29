@@ -5,15 +5,12 @@ function Comment(props) {
         return null;
     }
 
-    console.log(props);
-
-    //const { comment: { user, text } } = props;
-    const { comment } = props;
+    const { comment: { user, text } } = props;
 
     return (
         <p>
-            {comment.text}
-            <strong>by {comment.user}</strong>
+            {text}
+            <strong>by {user}</strong>
         </p>
     )
 }

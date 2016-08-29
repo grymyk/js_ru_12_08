@@ -9,6 +9,13 @@ class Article extends Component {
         toggleOpen: PropTypes.func
     };
 
+    handleDelete = (ev) => {
+        ev.preventDefault();
+
+        console.log('handleDelete');
+        console.log('Article ID: ', this.props.article.id);
+    };
+
     render() {
         //console.log(this.props);
 
@@ -18,7 +25,9 @@ class Article extends Component {
 
         return (
             <div>
-                <h3 onClick = {toggleOpen}>{title}</h3>
+                <h3 onClick = {toggleOpen}>{title}
+                    -- <a href="#" onClick={this.handleDelete}>Delete Me</a>
+                </h3>
                 {body}
             </div>
         )
